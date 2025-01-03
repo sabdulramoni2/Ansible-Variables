@@ -22,8 +22,7 @@
         comment: ashiwaju admin
         group: admin
       register: user_creation_result
-    - debug: msg={{user_creation_results}}
-
+    - debug: msg={{user_creation_result}}
 
 - name: Deploy nodejs app
   hosts: 157.230.5.162
@@ -41,7 +40,7 @@
         dest: /home/ashiwaju
         remote_src: yes
       register: user_creation_result
-    - debug: msg={{user_creation_results}}
+    - debug: msg={{user_creation_result}}
     - name: Install dependencies
       npm:
         path: /home/ashiwaju/package

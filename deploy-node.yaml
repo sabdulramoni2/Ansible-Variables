@@ -21,7 +21,8 @@
         name: ashiwaju
         comment: ashiwaju admin
         group: admin
-
+      register: user_creation_result
+    - debug: msg={{user_creation_results}}
 
 
 - name: Deploy nodejs app
@@ -39,6 +40,8 @@
         src: /home/ashiwaju/app-1.0.0.tgz
         dest: /home/ashiwaju
         remote_src: yes
+      register: user_creation_result
+    - debug: msg={{user_creation_results}}
     - name: Install dependencies
       npm:
         path: /home/ashiwaju/package
